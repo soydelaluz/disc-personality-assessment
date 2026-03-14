@@ -1,7 +1,7 @@
 [
     {
         "style": "D",
-        "question": "I thrive in fast-paced environments where I can take charge and make decisions quickly.",
+        "question": "Me desenvuelvo bien en entornos de ritmo rápido donde puedo tomar las riendas y tomar decisiones rápidamente.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -11,7 +11,7 @@
     },
     {
         "style": "I",
-        "question": "I genuinely enjoy collaborating with others and building strong relationships within a team.",
+        "question": "Disfruto sinceramente colaborando con los demás y construyendo relaciones sólidas dentro de un equipo.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -21,7 +21,7 @@
     },
     {
         "style": "C",
-        "question": "I find great satisfaction in meticulous planning and ensuring every detail is accounted for.",
+        "question": "Encuentro una gran satisfacción en la planificación meticulosa y en asegurar que se tengan en cuenta todos los detalles.",
         "mapping": {
             "D": 0,
             "I": 0,
@@ -31,7 +31,7 @@
     },
     {
         "style": "S",
-        "question": "I prioritize maintaining harmony and believe in finding common ground to resolve conflicts peacefully.",
+        "question": "Priorizo el mantenimiento de la armonía y creo en la búsqueda de puntos comunes para resolver los conflictos de forma pacífica.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -41,7 +41,7 @@
     },
     {
         "style": "D",
-        "question": "I naturally gravitate towards leadership roles and feel comfortable taking initiative in group settings.",
+        "question": "Tiendo de forma natural hacia los roles de liderazgo y me siento cómodo tomando la iniciativa en entornos grupales.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -51,7 +51,7 @@
     },
     {
         "style": "I",
-        "question": "I have a knack for inspiring others and enjoy sharing my enthusiasm to get people excited about my ideas.",
+        "question": "Tengo facilidad para inspirar a los demás y disfruto compartiendo mi entusiasmo para que la gente se emocione con mis ideas.",
         "mapping": {
             "D": 1,
             "I": 2,
@@ -61,7 +61,7 @@
     },
     {
         "style": "S",
-        "question": "I appreciate the comfort of routines and prefer a predictable structure to my day-to-day activities.",
+        "question": "Valoro la comodidad de las rutinas y prefiero una estructura predecible en mis actividades cotidianas.",
         "mapping": {
             "D": -1,
             "I": -1,
@@ -71,7 +71,7 @@
     },
     {
         "style": "C",
-        "question": "I am highly detail-oriented and take pride in producing work that is precise and accurate.",
+        "question": "Soy una persona muy detallista y me enorgullece realizar un trabajo preciso y exacto.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -81,7 +81,7 @@
     },
     {
         "style": "D",
-        "question": "I feel most at ease when I have a clear understanding of my responsibilities and can maintain control over my tasks.",
+        "question": "Me siento más cómodo cuando comprendo claramente mis responsabilidades y puedo mantener el control sobre mis tareas.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -91,7 +91,7 @@
     },
     {
         "style": "I",
-        "question": "I enjoy being the life of the party and easily connect with others in social situations.",
+        "question": "Disfruto siendo el alma de la fiesta y conecto fácilmente con los demás en situaciones sociales.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -101,7 +101,7 @@
     },
     {
         "style": "S",
-        "question": "I value stability and prefer environments that are calm and predictable.",
+        "question": "Valoro la estabilidad y prefiero los entornos tranquilos y predecibles.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -111,7 +111,7 @@
     },
     {
         "style": "C",
-        "question": "I am comfortable analyzing data and using logic to solve complex problems.",
+        "question": "Me siento cómodo analizando datos y utilizando la lógica para resolver problemas complejos.",
         "mapping": {
             "D": -1,
             "I": -1,
@@ -121,7 +121,7 @@
     },
     {
         "style": "D",
-        "question": "I am energized by challenges and enjoy thinking on my feet in high-pressure situations.",
+        "question": "Los retos me dan energía y disfruto pensando rápido en situaciones de mucha presión.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -131,7 +131,7 @@
     },
     {
         "style": "I",
-        "question": "I am a people person and find it easy to build rapport with individuals from all walks of life.",
+        "question": "Soy una persona sociable y me resulta fácil establecer una buena relación con personas de todo tipo.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -141,7 +141,7 @@
     },
     {
         "style": "S",
-        "question": "I tend to be cautious and prefer to carefully weigh my options before taking any risks.",
+        "question": "Suelo ser precavido y prefiero sopesar cuidadosamente mis opciones antes de correr cualquier riesgo.",
         "mapping": {
             "D": -2,
             "I": -1,
@@ -151,7 +151,7 @@
     },
     {
         "style": "C",
-        "question": "I have high standards for myself and others and strive for excellence in everything I do.",
+        "question": "Tengo estándares altos para mí y para los demás, y me esfuerzo por alcanzar la excelencia en todo lo que hago.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -161,7 +161,7 @@
     },
     {
         "style": "D",
-        "question": "I value honesty and directness in communication, even if it means having difficult conversations.",
+        "question": "Valoro la honestidad y la franqueza en la comunicación, aunque ello signifique tener conversaciones difíciles.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -171,7 +171,7 @@
     },
     {
         "style": "S",
-        "question": "I believe in the power of collaboration and prefer working in teams where everyone's voice is heard.",
+        "question": "Creo en el poder de la colaboración y prefiero trabajar en equipos donde se escuche la voz de todos.",
         "mapping": {
             "D": 0,
             "I": 1,
@@ -181,7 +181,7 @@
     },
     {
         "style": "C",
-        "question": "I enjoy digging into complex information and finding patterns or insights that others might miss.",
+        "question": "Disfruto profundizando en información compleja y encontrando patrones o perspectivas que otros podrían pasar por alto.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -191,7 +191,7 @@
     },
     {
         "style": "D",
-        "question": "I am constantly seeking new opportunities to learn and grow, both personally and professionally.",
+        "question": "Busco constantemente nuevas oportunidades para aprender y crecer, tanto personal como profesionalmente.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -201,7 +201,7 @@
     },
     {
         "style": "S",
-        "question": "I strive to maintain positive relationships and avoid unnecessary conflict whenever possible.",
+        "question": "Me esfuerzo por mantener relaciones positivas y evitar conflictos innecesarios siempre que sea posible.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -211,7 +211,7 @@
     },
     {
         "style": "C",
-        "question": "I take pride in my ability to create well-structured plans and execute them flawlessly.",
+        "question": "Me enorgullece mi capacidad para crear planes bien estructurados y ejecutarlos sin errores.",
         "mapping": {
             "D": 0,
             "I": 0,
@@ -221,7 +221,7 @@
     },
     {
         "style": "D",
-        "question": "I am willing to make tough decisions and stand my ground, even if it means facing opposition or disagreement.",
+        "question": "Estoy dispuesto a tomar decisiones difíciles y mantenerme firme, aunque ello suponga enfrentarme a la oposición o al desacuerdo.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -231,7 +231,7 @@
     },
     {
         "style": "I",
-        "question": "I love sharing my passion with others and can easily get people excited about my ideas.",
+        "question": "Me encanta compartir mi pasión con los demás y puedo entusiasmar fácilmente a la gente con mis ideas.",
         "mapping": {
             "D": 1,
             "I": 2,
@@ -241,7 +241,7 @@
     },
     {
         "style": "S",
-        "question": "I take pride in being dependable and consistent in everything I do.",
+        "question": "Me enorgullece ser una persona fiable y constante en todo lo que hago.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -251,7 +251,7 @@
     },
     {
         "style": "C",
-        "question": "I double-check my work meticulously to ensure accuracy and avoid mistakes.",
+        "question": "Reviso mi trabajo meticulosamente para garantizar la precisión y evitar errores.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -261,7 +261,7 @@
     },
     {
         "style": "D",
-        "question": "I thrive in environments that allow me to make quick decisions and move forward without unnecessary deliberation.",
+        "question": "Me desenvuelvo bien en entornos que me permiten tomar decisiones rápidas y avanzar sin deliberaciones innecesarias.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -271,7 +271,7 @@
     },
     {
         "style": "D",
-        "question": "I feel confident taking charge in situations where others may hesitate or feel uncertain.",
+        "question": "Me siento seguro tomando el mando en situaciones en las que otros pueden vacilar o sentirse inseguros.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -281,7 +281,7 @@
     },
     {
         "style": "D",
-        "question": "I enjoy setting bold goals and pushing myself to achieve them, even when the odds are against me.",
+        "question": "Disfruto fijándome metas ambiciosas y presionándome para alcanzarlas, incluso cuando las probabilidades están en mi contra.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -291,7 +291,7 @@
     },
     {
         "style": "I",
-        "question": "I often find myself motivating others with my enthusiasm and positive attitude.",
+        "question": "A menudo me encuentro motivando a los demás con mi entusiasmo y actitud positiva.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -301,7 +301,7 @@
     },
     {
         "style": "I",
-        "question": "I feel energized when I am surrounded by people and enjoy interacting with them regularly.",
+        "question": "Me siento con energía cuando estoy rodeado de gente y disfruto interactuando con ellos con regularidad.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -311,7 +311,7 @@
     },
     {
         "style": "S",
-        "question": "I tend to avoid confrontation and prefer resolving disagreements through understanding and compromise.",
+        "question": "Tiendo a evitar la confrontación y prefiero resolver los desacuerdos mediante el entendimiento y el compromiso.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -321,7 +321,7 @@
     },
     {
         "style": "S",
-        "question": "I find satisfaction in maintaining long-term relationships and helping others feel comfortable.",
+        "question": "Me satisface mantener relaciones a largo plazo y ayudar a los demás a sentirse cómodos.",
         "mapping": {
             "D": -1,
             "I": 1,
@@ -331,7 +331,7 @@
     },
     {
         "style": "C",
-        "question": "I enjoy working in structured environments where tasks are well-defined and expectations are clear.",
+        "question": "Disfruto trabajando en entornos estructurados donde las tareas están bien definidas y las expectativas son claras.",
         "mapping": {
             "D": -1,
             "I": -1,
@@ -341,7 +341,7 @@
     },
     {
         "style": "C",
-        "question": "I am very methodical in my approach and ensure that every step of a process is followed precisely.",
+        "question": "Soy muy metódico en mi enfoque y me aseguro de seguir con precisión cada paso de un proceso.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -351,7 +351,7 @@
     },
     {
         "style": "D",
-        "question": "I prefer to make decisions quickly and decisively rather than overthinking every detail.",
+        "question": "Prefiero tomar decisiones de forma rápida y decidida en lugar de pensar demasiado cada detalle.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -361,7 +361,7 @@
     },
     {
         "style": "I",
-        "question": "I get excited by the idea of meeting new people and forming connections with those around me.",
+        "question": "Me entusiasma la idea de conocer gente nueva y establecer vínculos con quienes me rodean.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -371,7 +371,7 @@
     },
     {
         "style": "S",
-        "question": "I prefer a calm and steady environment, where sudden changes are rare and things go as planned.",
+        "question": "Prefiero un entorno tranquilo y estable, donde los cambios bruscos sean raros y las cosas salgan según lo previsto.",
         "mapping": {
             "D": -1,
             "I": -1,
@@ -381,7 +381,7 @@
     },
     {
         "style": "C",
-        "question": "I tend to focus on the accuracy of details and always double-check my work for mistakes.",
+        "question": "Suelo centrarme en la exactitud de los detalles y siempre reviso mi trabajo en busca de errores.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -391,7 +391,7 @@
     },
     {
         "style": "D",
-        "question": "I thrive in competitive environments and enjoy striving to be the best at what I do.",
+        "question": "Me desenvuelvo bien en entornos competitivos y disfruto esforzándome por ser el mejor en lo que hago.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -401,7 +401,7 @@
     },
     {
         "style": "S",
-        "question": "I prefer taking a supportive role, helping others achieve their goals rather than being in the spotlight myself.",
+        "question": "Prefiero asumir un papel de apoyo, ayudando a los demás a alcanzar sus objetivos en lugar de ser yo el centro de atención.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -411,7 +411,7 @@
     },
     {
         "style": "I",
-        "question": "I often enjoy telling stories or experiences to entertain or inspire those around me.",
+        "question": "A menudo disfruto contando historias o experiencias para entretener o inspirar a quienes me rodean.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -421,7 +421,7 @@
     },
     {
         "style": "C",
-        "question": "I am driven by the need for consistency and accuracy, and I dislike when things are left incomplete or messy.",
+        "question": "Me mueve la necesidad de coherencia y precisión, y me disgusta que las cosas se dejen incompletas o desordenadas.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -431,7 +431,7 @@
     },
     {
         "style": "D",
-        "question": "I do not enjoy situations where I have to wait for others to make decisions.",
+        "question": "No disfruto de las situaciones en las que tengo que esperar a que otros tomen decisiones.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -441,7 +441,7 @@
     },
     {
         "style": "I",
-        "question": "I do not enjoy spending long periods of time working alone without any interaction with others.",
+        "question": "No disfruto pasando largos periodos de tiempo trabajando solo sin ninguna interacción con los demás.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -451,7 +451,7 @@
     },
     {
         "style": "S",
-        "question": "I do not enjoy environments that are constantly changing and unpredictable.",
+        "question": "No disfruto de los entornos que cambian constantemente y son impredecibles.",
         "mapping": {
             "D": -1,
             "I": -1,
@@ -461,7 +461,7 @@
     },
     {
         "style": "C",
-        "question": "I do not enjoy making decisions based on incomplete information or guesswork.",
+        "question": "No disfruto tomando decisiones basadas en información incompleta o suposiciones.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -471,7 +471,7 @@
     },
     {
         "style": "D",
-        "question": "I do not enjoy being in situations where I have little to no control over the outcome.",
+        "question": "No disfruto estando en situaciones en las que tengo poco o ningún control sobre el resultado.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -481,7 +481,7 @@
     },
     {
         "style": "I",
-        "question": "I do not enjoy working in isolation without any feedback or recognition from others.",
+        "question": "No disfruto trabajando de forma aislada sin recibir comentarios o reconocimiento de los demás.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -491,7 +491,7 @@
     },
     {
         "style": "S",
-        "question": "I do not enjoy situations that involve conflict or disagreement.",
+        "question": "No disfruto de las situaciones que implican conflicto o desacuerdo.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -501,7 +501,7 @@
     },
     {
         "style": "C",
-        "question": "I do not enjoy tackling tasks that require creativity over precision and accuracy.",
+        "question": "No disfruto abordando tareas que requieren creatividad por encima de la precisión y la exactitud.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -511,7 +511,7 @@
     },
     {
         "style": "D",
-        "question": "I do not enjoy following directions from others without being able to give input or suggestions.",
+        "question": "No disfruto siguiendo las instrucciones de otros sin poder dar mi opinión o sugerencias.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -521,7 +521,7 @@
     },
     {
         "style": "I",
-        "question": "I do not enjoy routine tasks that do not involve interacting with others.",
+        "question": "No disfruto de las tareas rutinarias que no implican interactuar con los demás.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -531,7 +531,7 @@
     },
     {
         "style": "S",
-        "question": "I do not enjoy working in fast-paced environments with constant pressure.",
+        "question": "No disfruto trabajando en entornos de ritmo rápido con presión constante.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -541,7 +541,7 @@
     },
     {
         "style": "C",
-        "question": "I do not enjoy situations where the rules are unclear or frequently change.",
+        "question": "No disfruto de las situaciones en las que las reglas no están claras o cambian con frecuencia.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -551,7 +551,7 @@
     },
     {
         "style": "D",
-        "question": "I do not enjoy situations where I am not the one leading the effort or making decisions.",
+        "question": "No disfruto de las situaciones en las que no soy yo quien lidera el esfuerzo o toma las decisiones.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -561,7 +561,7 @@
     },
     {
         "style": "I",
-        "question": "I do not enjoy working in environments where I am not able to socialize and collaborate.",
+        "question": "No disfruto trabajando en entornos en los que no puedo socializar y colaborar.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -571,7 +571,7 @@
     },
     {
         "style": "S",
-        "question": "I do not enjoy being forced to make decisions quickly without enough time to think things through.",
+        "question": "No disfruto que me obliguen a tomar decisiones rápidamente sin tiempo suficiente para reflexionar.",
         "mapping": {
             "D": -1,
             "I": -1,
@@ -581,7 +581,7 @@
     },
     {
         "style": "C",
-        "question": "I do not enjoy working in environments where there is little emphasis on accuracy or attention to detail.",
+        "question": "No disfruto trabajando en entornos donde se da poca importancia a la precisión o a la atención al detalle.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -591,7 +591,7 @@
     },
     {
         "style": "I",
-        "question": "I enjoy participating in group activities where I can connect with a wide variety of people.",
+        "question": "Disfruto participando en actividades grupales donde puedo conectar con una gran variedad de personas.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -601,7 +601,7 @@
     },
     {
         "style": "I",
-        "question": "I find it easy to motivate and energize others in team settings.",
+        "question": "Me resulta fácil motivar y dar energía a los demás en entornos de equipo.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -611,7 +611,7 @@
     },
     {
         "style": "I",
-        "question": "I am comfortable speaking in front of large audiences and enjoy sharing my ideas.",
+        "question": "Me siento cómodo hablando ante grandes audiencias y disfruto compartiendo mi visión.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -621,7 +621,7 @@
     },
     {
         "style": "I",
-        "question": "I thrive in environments where I can interact with others regularly and build rapport.",
+        "question": "Me desenvuelvo bien en entornos donde puedo interactuar con los demás con regularidad y establecer una buena relación.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -631,7 +631,7 @@
     },
     {
         "style": "I",
-        "question": "I prefer brainstorming sessions where I can collaborate on ideas with others.",
+        "question": "Prefiero las sesiones de lluvia de ideas donde puedo colaborar en ideas con otros.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -641,7 +641,7 @@
     },
     {
         "style": "I",
-        "question": "I find fulfillment in helping others see the big picture and inspire them toward a common goal.",
+        "question": "Me llena ayudar a los demás a ver el panorama general e inspirarles hacia un objetivo común.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -651,7 +651,7 @@
     },
     {
         "style": "I",
-        "question": "I am skilled at building consensus among diverse groups.",
+        "question": "Tengo habilidad para generar consenso entre grupos diversos.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -661,7 +661,7 @@
     },
     {
         "style": "I",
-        "question": "I enjoy taking the lead in social gatherings and fostering a sense of community.",
+        "question": "Disfruto tomando la iniciativa en reuniones sociales y fomentando un sentido de comunidad.",
         "mapping": {
             "D": 1,
             "I": 2,
@@ -671,7 +671,7 @@
     },
     {
         "style": "I",
-        "question": "I am known for being persuasive and can easily influence others to support my ideas.",
+        "question": "Se me conoce por ser persuasivo y puedo influir fácilmente en los demás para que apoyen mis ideas.",
         "mapping": {
             "D": 1,
             "I": 2,
@@ -681,7 +681,7 @@
     },
     {
         "style": "I",
-        "question": "I thrive in environments where creativity and collaboration are encouraged.",
+        "question": "Me desenvuelvo bien en entornos donde se fomenta la creatividad y la colaboración.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -691,7 +691,7 @@
     },
     {
         "style": "I",
-        "question": "I often take initiative to reach out to others and establish connections.",
+        "question": "A menudo tomo la iniciativa para acercarme a los demás y establecer conexiones.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -701,7 +701,7 @@
     },
     {
         "style": "I",
-        "question": "I enjoy celebrating the achievements of others and fostering a positive team culture.",
+        "question": "Disfruto celebrando los logros de los demás y fomentando una cultura de equipo positiva.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -711,7 +711,7 @@
     },
     {
         "style": "I",
-        "question": "I am energized by working on projects that allow me to collaborate with multiple departments or teams.",
+        "question": "Me da energía trabajar en proyectos que me permiten colaborar con múltiples departamentos o equipos.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -721,7 +721,7 @@
     },
     {
         "style": "I",
-        "question": "I excel at networking and enjoy building long-term professional relationships.",
+        "question": "Sobresalgo en el networking y disfruto construyendo relaciones profesionales a largo plazo.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -731,7 +731,7 @@
     },
     {
         "style": "I",
-        "question": "I am motivated by recognition from others and enjoy receiving feedback on my contributions.",
+        "question": "Me motiva el reconocimiento de los demás y disfruto recibiendo comentarios sobre mis aportaciones.",
         "mapping": {
             "D": 0,
             "I": 2,
@@ -741,7 +741,7 @@
     },
     {
         "style": "C",
-        "question": "I enjoy developing detailed plans and following them precisely to achieve my goals.",
+        "question": "Disfruto desarrollando planes detallados y siguiéndolos con precisión para alcanzar mis metas.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -751,7 +751,7 @@
     },
     {
         "style": "C",
-        "question": "I take pride in my ability to maintain high standards of accuracy and quality in my work.",
+        "question": "Me enorgullece mi capacidad para mantener altos estándares de precisión y calidad en mi trabajo.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -761,7 +761,7 @@
     },
     {
         "style": "C",
-        "question": "I prefer environments where tasks are clearly defined, and there is a structured way to complete them.",
+        "question": "Prefiero los entornos donde las tareas están claramente definidas y existe una forma estructurada de completarlas.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -771,7 +771,7 @@
     },
     {
         "style": "C",
-        "question": "I am meticulous about ensuring all details are correct before moving forward with a task.",
+        "question": "Soy meticuloso a la hora de asegurar que todos los detalles son correctos antes de avanzar en una tarea.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -781,7 +781,7 @@
     },
     {
         "style": "C",
-        "question": "I am comfortable analyzing complex data and ensuring everything is accounted for before making a decision.",
+        "question": "Me siento cómodo analizando datos complejos y asegurándome de que todo está bajo control antes de tomar una decisión.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -791,7 +791,7 @@
     },
     {
         "style": "C",
-        "question": "I thrive in roles where attention to detail and accuracy are critical.",
+        "question": "Me desenvuelvo bien en funciones en las que la atención al detalle y la precisión son fundamentales.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -801,7 +801,7 @@
     },
     {
         "style": "C",
-        "question": "I am highly organized and prefer to plan my tasks in advance to ensure efficiency.",
+        "question": "Soy una persona muy organizada y prefiero planificar mis tareas con antelación para garantizar la eficiencia.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -811,7 +811,7 @@
     },
     {
         "style": "C",
-        "question": "I value precision and dislike situations where there is ambiguity or uncertainty.",
+        "question": "Valoro la precisión y me disgustan las situaciones en las que hay ambigüedad o incertidumbre.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -821,7 +821,7 @@
     },
     {
         "style": "C",
-        "question": "I prefer to work in environments where there are clear rules and guidelines that everyone follows.",
+        "question": "Prefiero trabajar en entornos donde haya reglas y directrices claras que todo el mundo siga.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -831,7 +831,7 @@
     },
     {
         "style": "C",
-        "question": "I enjoy projects where I can methodically follow steps to ensure everything is done correctly.",
+        "question": "Disfruto con los proyectos en los que puedo seguir metódicamente los pasos para asegurar que todo se hace correctamente.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -841,7 +841,7 @@
     },
     {
         "style": "C",
-        "question": "I often double-check my work to ensure there are no mistakes before submission.",
+        "question": "A menudo reviso mi trabajo dos veces para asegurarme de que no hay errores antes de entregarlo.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -851,7 +851,7 @@
     },
     {
         "style": "C",
-        "question": "I am driven by the need to create well-organized, structured processes that others can follow.",
+        "question": "Me mueve la necesidad de crear procesos bien organizados y estructurados que otros puedan seguir.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -861,7 +861,7 @@
     },
     {
         "style": "C",
-        "question": "I am motivated by the desire to produce error-free work and meet high expectations.",
+        "question": "Me motiva el deseo de producir un trabajo sin errores y cumplir con las altas expectativas.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -871,7 +871,7 @@
     },
     {
         "style": "C",
-        "question": "I feel most comfortable when I have clear, defined responsibilities and can focus on the details.",
+        "question": "Me siento más cómodo cuando tengo responsabilidades claras y definidas y puedo centrarme en los detalles.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -881,7 +881,7 @@
     },
     {
         "style": "C",
-        "question": "I dislike situations where there is little control over quality and accuracy.",
+        "question": "Me disgustan las situaciones en las que hay poco control sobre la calidad y la precisión.",
         "mapping": {
             "D": 0,
             "I": -1,
@@ -891,7 +891,7 @@
     },
     {
         "style": "D",
-        "question": "I thrive when I can take charge of situations and direct others toward achieving goals.",
+        "question": "Me desenvuelvo bien cuando puedo hacerme cargo de las situaciones y dirigir a los demás hacia la consecución de los objetivos.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -901,7 +901,7 @@
     },
     {
         "style": "D",
-        "question": "I prefer to set ambitious goals and push myself and others to reach them.",
+        "question": "Prefiero fijar metas ambiciosas y presionarme a mí mismo y a los demás para alcanzarlas.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -911,7 +911,7 @@
     },
     {
         "style": "D",
-        "question": "I enjoy making decisions quickly and don't hesitate to act when opportunities arise.",
+        "question": "Disfruto tomando decisiones rápidamente y no dudo en actuar cuando surgen oportunidades.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -921,7 +921,7 @@
     },
     {
         "style": "D",
-        "question": "I am comfortable taking risks if it means achieving a bigger reward.",
+        "question": "Me siento cómodo asumiendo riesgos si eso significa obtener una recompensa mayor.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -931,7 +931,7 @@
     },
     {
         "style": "D",
-        "question": "I am not afraid to challenge the status quo if it means driving progress.",
+        "question": "No temo desafiar el status quo si ello supone impulsar el progreso.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -941,7 +941,7 @@
     },
     {
         "style": "D",
-        "question": "I feel confident in my ability to lead teams and make difficult decisions.",
+        "question": "Me siento seguro de mi capacidad para liderar equipos y tomar decisiones difíciles.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -951,7 +951,7 @@
     },
     {
         "style": "D",
-        "question": "I prefer fast-paced environments where I can make significant impacts quickly.",
+        "question": "Prefiero los entornos de ritmo rápido en los que puedo tener un impacto significativo rápidamente.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -961,7 +961,7 @@
     },
     {
         "style": "D",
-        "question": "I enjoy working in environments where I am the one responsible for the outcomes.",
+        "question": "Disfruto trabajando en entornos donde soy yo el responsable de los resultados.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -971,7 +971,7 @@
     },
     {
         "style": "D",
-        "question": "I thrive on competition and am driven to outperform others.",
+        "question": "Me motiva la competición y me esfuerzo por superar a los demás.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -981,7 +981,7 @@
     },
     {
         "style": "D",
-        "question": "I am comfortable holding others accountable for their performance to meet high standards.",
+        "question": "Me siento cómodo exigiendo responsabilidades a los demás por su rendimiento para cumplir con los altos estándares.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -991,7 +991,7 @@
     },
     {
         "style": "D",
-        "question": "I enjoy taking on difficult challenges that test my skills and resilience.",
+        "question": "Disfruto asumiendo retos difíciles que ponen a prueba mis habilidades y mi resistencia.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -1001,7 +1001,7 @@
     },
     {
         "style": "D",
-        "question": "I prefer to lead projects rather than follow instructions from others.",
+        "question": "Prefiero liderar proyectos antes que seguir las instrucciones de otros.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -1011,7 +1011,7 @@
     },
     {
         "style": "D",
-        "question": "I am willing to take unpopular decisions if it leads to long-term success.",
+        "question": "Estoy dispuesto a tomar decisiones impopulares si ello conduce al éxito a largo plazo.",
         "mapping": {
             "D": 2,
             "I": 0,
@@ -1021,7 +1021,7 @@
     },
     {
         "style": "D",
-        "question": "I enjoy situations where I can demonstrate my expertise and take charge.",
+        "question": "Disfruto de las situaciones en las que puedo demostrar mi experiencia y tomar el mando.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -1031,7 +1031,7 @@
     },
     {
         "style": "D",
-        "question": "I am energized by opportunities that allow me to exercise authority and influence.",
+        "question": "Me dan energía las oportunidades que me permiten ejercer autoridad e influencia.",
         "mapping": {
             "D": 2,
             "I": 1,
@@ -1041,7 +1041,7 @@
     },
     {
         "style": "S",
-        "question": "I thrive in environments where tasks and expectations are clearly defined and rarely change.",
+        "question": "Me desenvuelvo bien en entornos donde las tareas y las expectativas están claramente definidas y rara vez cambian.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1051,7 +1051,7 @@
     },
     {
         "style": "S",
-        "question": "I feel most comfortable when I can follow a consistent routine and avoid unexpected changes.",
+        "question": "Me siento más cómodo cuando puedo seguir una rutina constante y evitar cambios inesperados.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1061,7 +1061,7 @@
     },
     {
         "style": "S",
-        "question": "I prefer working in a structured environment where there are clear processes and minimal disruptions.",
+        "question": "Prefiero trabajar en un entorno estructurado donde haya procesos claros y mínimas interrupciones.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1071,7 +1071,7 @@
     },
     {
         "style": "S",
-        "question": "I value long-term relationships and enjoy working with the same team over extended periods.",
+        "question": "Valoro las relaciones a largo plazo y disfruto trabajando con el mismo equipo durante periodos prolongados.",
         "mapping": {
             "D": -1,
             "I": 1,
@@ -1081,7 +1081,7 @@
     },
     {
         "style": "S",
-        "question": "I am at my best when I can focus on one task at a time, without frequent interruptions.",
+        "question": "Doy lo mejor de mí cuando puedo centrarme en una tarea a la vez, sin interrupciones frecuentes.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1091,7 +1091,7 @@
     },
     {
         "style": "S",
-        "question": "I prefer predictable workflows where I know what to expect each day.",
+        "question": "Prefiero flujos de trabajo predecibles donde sepa qué esperar cada día.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1101,7 +1101,7 @@
     },
     {
         "style": "S",
-        "question": "I feel most productive in environments where stability and reliability are prioritized over rapid change.",
+        "question": "Me siento más productivo en entornos donde se prioriza la estabilidad y la fiabilidad sobre el cambio rápido.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1111,7 +1111,7 @@
     },
     {
         "style": "S",
-        "question": "I am more comfortable with incremental improvements rather than sudden, large-scale changes.",
+        "question": "Me siento más cómodo con las mejoras incrementales que con los cambios repentinos a gran escala.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1121,7 +1121,7 @@
     },
     {
         "style": "S",
-        "question": "I value a calm, steady approach to problem-solving rather than rushing into quick fixes.",
+        "question": "Valoro un enfoque tranquilo y constante para la resolución de problemas en lugar de precipitarme en soluciones rápidas.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1131,7 +1131,7 @@
     },
     {
         "style": "S",
-        "question": "I prefer long-term projects that allow me to work methodically toward a defined goal.",
+        "question": "Prefiero los proyectos a largo plazo que me permiten trabajar metódicamente hacia un objetivo definido.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1141,7 +1141,7 @@
     },
     {
         "style": "S",
-        "question": "I enjoy environments where change is carefully planned and managed rather than happening unexpectedly.",
+        "question": "Disfruto de los entornos en los que el cambio se planifica y gestiona cuidadosamente en lugar de ocurrir de forma inesperada.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1151,7 +1151,7 @@
     },
     {
         "style": "S",
-        "question": "I feel more secure when I know the exact outcomes or consequences of my actions.",
+        "question": "Me siento más seguro cuando conozco los resultados o consecuencias exactos de mis acciones.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1161,7 +1161,7 @@
     },
     {
         "style": "S",
-        "question": "I appreciate environments where stability is prioritized and sudden changes are kept to a minimum.",
+        "question": "Aprecio los entornos en los que se prioriza la estabilidad y los cambios bruscos se mantienen al mínimo.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1171,7 +1171,7 @@
     },
     {
         "style": "S",
-        "question": "I am comfortable when I can rely on established processes and know that things will follow a predictable pattern.",
+        "question": "Me siento cómodo cuando puedo confiar en procesos establecidos y sé que las cosas seguirán un patrón predecible.",
         "mapping": {
             "D": -1,
             "I": 0,
@@ -1181,7 +1181,7 @@
     },
     {
         "style": "S",
-        "question": "I prefer to work in environments where sudden changes or uncertainties are rare and decisions are well-considered.",
+        "question": "Prefiero trabajar en entornos donde los cambios repentinos o las incertidumbres sean raros y las decisiones sean bien meditadas.",
         "mapping": {
             "D": -1,
             "I": 0,
