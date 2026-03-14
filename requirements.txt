@@ -1,5 +1,7 @@
 streamlit
-numpy==1.26.4
+numpy
 matplotlib
 reportlab
-Pillow
+fastapi
+uvicorn
+pydantic

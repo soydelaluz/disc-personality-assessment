@@ -1,4 +1,4 @@
-questions = [
+[
     {
         "question": "Al empezar un nuevo proyecto, ¿prefieres:",
         "option_a": "Generar una variedad de ideas creativas.",
@@ -744,7 +744,7 @@ questions = [
                 "Aprendiz"
             ],
             "option_b": [
-                "Buscador de aliento",
+                "Refuerzo positivo",
                 "Positividad"
             ]
         }
@@ -1441,11 +1441,11 @@ questions = [
     },
     {
         "question": "Al considerar el éxito profesional, ¿qué valoras más:",
-        "option_a": "Alcanzar un alto nivel de experiencia.",
+        "option_a": "Alcanzar un alto nivel de pericia.",
         "option_b": "Tener un impacto significativo.",
         "alignment": {
             "option_a": [
-                "Experiencia",
+                "Pericia",
                 "Aprendiz"
             ],
             "option_b": [
@@ -1500,7 +1500,7 @@ questions = [
         }
     },
     {
-        "question": "¿Tiendes a ser más:",
+        "question": "¿Tiende a ser más:",
         "option_a": "Crítico y cuestionador.",
         "option_b": "Aceptador y confiado.",
         "alignment": {
