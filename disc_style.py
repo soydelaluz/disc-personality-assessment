@@ -4,13 +4,17 @@ import matplotlib.pyplot as plt
 import random
 import json
 import base64
-from io import BytesIO
-from reportlab.lib.pagesizes import letter
-from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle, PageBreak
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from io import StringIO
-import math
+from io import BytesIO, StringIO
+from disc_core import (
+    load_questions,
+    load_descriptions,
+    calculate_raw_scores,
+    normalize_scores,
+    calculate_resultant_vector,
+    get_style_description,
+    get_relative_percentages
+)
+from disc_report import create_pdf_report
 
 
 st.set_page_config(
@@ -213,236 +217,6 @@ def get_pdf_download_button(pdf_buffer):
     )
 
 
-def describe_style(normalized_score, resultant_angle):
-    """
-    Determine the user's DISC style based on the resultant vector (angle and magnitude) on the DISC wheel.
-    Args:
-        normalized_score: Dictionary of normalized scores for D, I, S, C styles.
-        resultant_angle: The resultant angle in radians.
-        resultant_magnitude: The resultant magnitude (how strongly the traits are combined).
-
-    Returns:
-        A string description of the DISC style.
-    """
-
-    # Convert the resultant angle from radians to degrees
-    resultant_degrees = math.degrees(resultant_angle)
-    if resultant_degrees < 0:
-        resultant_degrees += 360  # Convert negative angles to positive
-
-    # Define the angular ranges for main styles and combinations
-    style_ranges = {
-        # D (Dominance)
-        "D": (315, 337.5),
-        "DC": (270, 315),
-        "DI": (337.5, 360),  # Also covers the 0 degree point
-        
-        # I (Influence)
-        "I": (45, 67.5),
-        "ID": (0, 45),
-        "IS": (67.5, 90),
-        
-        # S (Steadiness)
-        "S": (135, 157.5),
-        "SI": (90, 135),
-        "SC": (157.5, 180),
-        
-        # C (Conscientiousness)
-        "C": (225, 247.5),
-        "CS": (180, 225),
-        "CD": (247.5, 270)
-    }
-
-    # Check if all normalized scores are equal (balanced style)
-    if all(score == list(normalized_score.values())[0] for score in normalized_score.values()):
-        st.markdown("### Estilo Equilibrado")
-        st.markdown(
-            "Tus respuestas indican una personalidad equilibrada, en la que no muestras una preferencia clara por ningún estilo DISC específico."
-        )
-        return "Estilo Equilibrado"
-
-    # Determine which range the resultant angle falls into
-    for style, (start_angle, end_angle) in style_ranges.items():
-        if start_angle <= resultant_degrees < end_angle or (start_angle == 337.5 and resultant_degrees == 0):
-            # If it's a combination style, look up the combination description
-            description = disc_descriptions["single"][style]
-            
-            # Display the result
-            st.markdown(f"{description['title']}\n\n{description['description']}")
-            st.markdown(f"**Fortalezas:** {description['strengths']}")
-            st.markdown(f"**Desafíos:** {description['challenges']}")
-            return f"{description['title']}\n\n{description['description']}\n\nFortalezas: {description['strengths']}\n\nDesafíos: {description['challenges']}"
-    
-    # Default fallback if no match is found
-    st.markdown("### Estilo Equilibrado")
-    st.markdown(
-        "Tus respuestas indican una personalidad equilibrada sin una preferencia clara por ningún estilo DISC específico."
-    )
-    return "Estilo Equilibrado"
-
-
-
-def normalize_scores(scores, questions):
-    max_possible_scores = {style: 0.0 for style in ["D", "I", "S", "C"]}
-    min_possible_scores = {style: 0.0 for style in ["D", "I", "S", "C"]}
-
-    for q in questions:
-        for style in ["D", "I", "S", "C"]:
-            mapping = q["mapping"][style]
-            if mapping >= 0:
-                max_contribution = mapping * 2  # Max when (answer - 3) = +2
-                min_contribution = mapping * (-2)  # Min when (answer - 3) = -2
-            else:
-                max_contribution = mapping * (-2)  # Max when (answer - 3) = -2
-                min_contribution = mapping * 2  # Min when (answer - 3) = +2
-
-            max_possible_scores[style] += max_contribution
-            min_possible_scores[style] += min_contribution
-
-    print(f"Max possible scores: {max_possible_scores}")
-    print(f"Min possible scores: {min_possible_scores}")
-
-    normalized_scores = {}
-    for style in ["D", "I", "S", "C"]:
-        # Ensure the raw score is within the possible range
-        score = max(min(scores[style], max_possible_scores[style]), min_possible_scores[style])
-        score_range = max_possible_scores[style] - min_possible_scores[style]
-        if score_range == 0:
-            normalized_scores[style] = 50.0  # Neutral score if no variation is possible
-        else:
-            normalized_scores[style] = ((score - min_possible_scores[style]) / score_range) * 100
-            # Ensure the normalized score is within 0 to 100
-            normalized_scores[style] = max(0, min(normalized_scores[style], 100))
-    return normalized_scores
-
-
-# Function to create PDF report
-def create_pdf_report(normalized_score, relative_percentages, fig, style_description):
-    buffer = BytesIO()
-    doc = SimpleDocTemplate(buffer, pagesize=letter, topMargin=50, bottomMargin=50)
-    styles = getSampleStyleSheet()
-    
-    # Define custom styles for better formatting
-    styles.add(ParagraphStyle(name='Justify', alignment=4, leading=12))
-    styles.add(ParagraphStyle(name='Heading2Center', parent=styles['Heading2'], alignment=1))
-    styles.add(ParagraphStyle(name='BodyTextCenter', parent=styles['BodyText'], alignment=1))
-    
-    story = []
-
-    # Title
-    story.append(Paragraph("Reporte de Evaluación de Personalidad DISC", styles["Title"]))
-    story.append(Spacer(1, 20))
-
-    # Add Introduction
-    story.append(Paragraph("Gracias por completar la Evaluación de Personalidad DISC. Este reporte proporciona información sobre tu estilo de personalidad basada en tus respuestas.", styles['Justify']))
-    story.append(Spacer(1, 20))
-
-    # Add DISC Style Breakdown (Absolute Scores)
-    story.append(Paragraph("Tu desglose de estilo DISC (Puntuaciones absolutas):", styles["Heading2"]))
-    story.append(Spacer(1, 10))
-    story.append(Paragraph("Las siguientes puntuaciones representan tu nivel absoluto en cada estilo DISC en una escala del 0% al 100%. Un porcentaje más alto indica una tendencia más fuerte hacia ese estilo.", styles['Justify']))
-    story.append(Spacer(1, 10))
-
-    # Create a table for absolute scores
-    data = [['Estilo', 'Puntuación (0-100%)']]
-    for style, score in normalized_score.items():
-        data.append([style, f"{score:.2f}%"])
-
-    table = Table(data, hAlign='LEFT', colWidths=[100, 150])
-    table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-        ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
-        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('ALIGN', (1, 1), (-1, -1), 'CENTER'),
-    ]))
-    story.append(table)
-    story.append(Spacer(1, 20))
-
-    # Add DISC Style Breakdown (Relative Percentages)
-    story.append(Paragraph("Tu desglose de estilo DISC (Porcentajes relativos):", styles["Heading2"]))
-    story.append(Spacer(1, 10))
-    story.append(Paragraph("Estos porcentajes representan la proporción de cada estilo DISC en relación con tu perfil de personalidad general. El total suma el 100%.", styles['Justify']))
-    story.append(Spacer(1, 10))
-
-    # Create a table for relative percentages
-    data = [['Estilo', 'Porcentaje relativo']]
-    for style, score in relative_percentages.items():
-        data.append([style, f"{score:.2f}%"])
-
-    table = Table(data, hAlign='LEFT', colWidths=[100, 150])
-    table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-        ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
-        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('ALIGN', (1, 1), (-1, -1), 'CENTER'),
-    ]))
-    story.append(table)
-    story.append(Spacer(1, 20))
-
-    # Explanation about the difference between Absolute Scores and Relative Percentages
-    story.append(Paragraph("Cómo entender tus puntuaciones:", styles["Heading2"]))
-    story.append(Spacer(1, 10))
-    story.append(Paragraph(
-        "Las puntuaciones absolutas indican la fuerza con la que manifiestas cada estilo DISC por sí solo, sin compararlo con otros estilos. Una puntuación más alta significa que tiendes a mostrar más comportamientos asociados a ese estilo.\n\n"
-        "Los porcentajes relativos muestran cómo contribuye cada estilo a tu perfil de personalidad general en comparación con los demás estilos. Estos porcentajes suman el 100% y te ayudan a comprender qué estilos son más dominantes en tu personalidad.",
-        styles['Justify']
-    ))
-    story.append(Spacer(1, 100))
-
-    # Add the plot as an image
-    img_buffer = BytesIO()
-    fig.savefig(img_buffer, format="png", dpi=300, bbox_inches="tight")
-    img_buffer.seek(0)
-    img = Image(img_buffer, width=400, height=400)
-    story.append(Spacer(1, 10))
-    story.append(img)
-    story.append(Spacer(1, 20))
-
-    # Add personalized style description
-    story.append(Paragraph("Tu descripción personalizada del estilo DISC:", styles["Heading2"]))
-    story.append(Spacer(1, 10))
-    story.append(Paragraph(style_description.replace("###", ""), styles['Justify']))
-    story.append(Spacer(1, 50))
-
-    story.append(PageBreak())
-    # Add explanation about each DISC style
-    story.append(Paragraph("Cómo entender todos los estilos DISC:", styles["Heading2"]))
-    story.append(Spacer(1, 10))
-    styles_list = [
-        ('Dominancia (D):', 'Tiendes a ser directo, orientado a los resultados y asertivo. Te motivan los retos y la consecución de resultados tangibles.'),
-        ('Influencia (I):', 'Sueles ser extrovertido, entusiasta y optimista. Disfrutas de las interacciones sociales y de persuadir a los demás.'),
-        ('Estabilidad (S):', 'Sueles ser paciente, solidario y estar orientado al equipo. Valoras la cooperación y la armonía en las relaciones.'),
-        ('Cumplimiento (C):', 'Tiendes a ser analítico, preciso y detallista. Te centras en la exactitud, la calidad y la experiencia.')
-    ]
-    for title, description in styles_list:
-        story.append(Paragraph(f"<b>{title}</b> {description}", styles['Justify']))
-        story.append(Spacer(1, 5))
-    story.append(Spacer(1, 10))
-
-    # Add final remarks
-    story.append(
-        Paragraph(
-            "Recuerda que todo el mundo tiene aspectos de los cuatro estilos, pero la mayoría de la gente tiende a gravitar hacia uno o dos estilos principales. "
-            "Tu combinación única de estilos influye en tu forma de comunicarte, tomar decisiones e interactuar con los demás.",
-            styles['Justify']
-        )
-    )
-    story.append(Spacer(1, 10))
-    story.append(
-        Paragraph(
-            "Utiliza esta información para mejorar tus relaciones personales y profesionales reconociendo y apreciando los diferentes estilos en ti mismo y en los demás.",
-            styles['Justify']
-        )
-    )
-
-    # Build the PDF
-    doc.build(story)
-
-    # Ensure we return the buffer to be used for downloading
-    buffer.seek(0)
-    return buffer
-
-
 # If the user has started the test, proceed with the questions
 if st.session_state.started:
 
@@ -463,7 +237,7 @@ if st.session_state.started:
         st.session_state.submitted = False
 
     if "questions" not in st.session_state:
-        questions = json.load(open("questions.json", "r"))
+        questions = load_questions()
         random.shuffle(questions)
         st.session_state.questions = questions[:30]  # Use the first 30 questions
 
@@ -474,7 +248,7 @@ if st.session_state.started:
     ) // questions_per_page  # Ceiling division
 
     # Load DISC descriptions
-    disc_descriptions = json.load(open("disc_descriptions.json", "r"))
+    disc_descriptions = load_descriptions()
 
     if not st.session_state.show_results:
         start = st.session_state.page_number * questions_per_page
@@ -538,107 +312,44 @@ if st.session_state.started:
     else:
         # After the user has completed the assessment or uploaded results
         if not st.session_state.submitted:
-            # Reset the scores before calculating
-            st.session_state.score = {"D": 0, "I": 0, "S": 0, "C": 0}
             # Calculate raw scores
-            for i in range(total_questions):
-                q = st.session_state.questions[i]
-                answer = st.session_state.answers[i]
-                for style in ["D", "I", "S", "C"]:
-                    st.session_state.score[style] += q["mapping"][style] * (answer - 3)
-            print(f'Raw score: {st.session_state.score}')
+            st.session_state.score = calculate_raw_scores(st.session_state.answers, st.session_state.questions)
             st.session_state.raw_score = st.session_state.score.copy()
 
             # Normalize the scores
             normalized_score = normalize_scores(st.session_state.score, st.session_state.questions)
-            print(f'Normalized score: {normalized_score}')
             st.session_state.normalized_score = normalized_score
             st.session_state.submitted = True  # Set to True to avoid recalculation
-        
-        
         else:
-            # Check if normalized_score exists in session_state
             if 'normalized_score' in st.session_state:
                 normalized_score = st.session_state.normalized_score
             else:
-                # If not, recalculate it from st.session_state.score
                 normalized_score = normalize_scores(st.session_state.score, st.session_state.questions)
                 st.session_state.normalized_score = normalized_score
 
-        print(f'Normalized score: {normalized_score}')
-        
-        # Define the categories and their positions
-        categories = ["D", "I", "S", "C"]
-
-        # Angles for the styles
-        angles = [7 * np.pi / 4, np.pi / 4, 3 * np.pi / 4, 5 * np.pi / 4]
-
-        # Prepare the values
-        values = [normalized_score[cat] for cat in categories]
-        
-        # Divide Each Normalized Score by 100:
-        scaled_scores = {style: score / 100 for style, score in normalized_score.items()}
-
-        # Compute x and y components of the style vectors
-        x_components = []
-        y_components = []
-        for style in categories:
-            angle = angles[categories.index(style)]
-            magnitude = scaled_scores[style]
-            x_components.append(magnitude * np.cos(angle))
-            y_components.append(magnitude * np.sin(angle))
-
-        # Sum the components
-        total_x = sum(x_components)
-        total_y = sum(y_components)
-
         # Compute the resultant vector
-        resultant_magnitude = np.sqrt(total_x**2 + total_y**2)
-        resultant_angle = np.arctan2(total_y, total_x)
+        resultant_angle, resultant_magnitude = calculate_resultant_vector(normalized_score)
         
-        print(f"Resultant magnitude: {resultant_magnitude}")
-
-        # Ensure the magnitude does not exceed 1
-        # resultant_magnitude = min(resultant_magnitude, 1.0)
-
         # Create the updated plot
         fig = create_disc_plot(resultant_angle, resultant_magnitude)
 
         # Use Streamlit columns to control the figure width
-        col1, col2, col3 = st.columns(
-            [1, 2, 1]
-        )  # Adjust the middle column width (2/4 of the page width)
+        col1, col2, col3 = st.columns([1, 2, 1])
 
         with col2:  # Display the plot in the middle column
             st.pyplot(fig)
 
         # Personalized Style Descriptions
         st.markdown("## Tu Estilo DISC Personalizado")
-        style_description = describe_style(normalized_score, resultant_angle)
-
-        # Display normalized scores with progress bars
+        style_info = get_style_description(normalized_score, resultant_angle, disc_descriptions)
         
-        ### Here is was using the style usage rather than general style breakdown
-        # st.markdown("## Your DISC Style Breakdown")
-        # st.markdown("### Style Usage Scores (How much you use each style)")
-        # cols = st.columns(4)
-        # for idx, (style, score_value) in enumerate(normalized_score.items()):
-        #     with cols[idx]:
-        #         st.markdown(f"**{style}**")
-        #         # Ensure score_value is within 0 to 100
-        #         score_value = max(0, min(score_value, 100))
-        #         # Adjust the progress bar value to be between 0.0 and 1.0
-        #         st.progress(score_value / 100)
-        #         # Display the score as a percentage
-        #         st.text(f"{score_value:.2f}%")
-                
-        total_normalized = sum(normalized_score.values())
-        relative_percentages = {}
-        for style, score in normalized_score.items():
-            if total_normalized == 0:
-                relative_percentages[style] = 0
-            else:
-                relative_percentages[style] = (score / total_normalized) * 100
+        st.markdown(f"### {style_info['title']}")
+        st.markdown(style_info['description'])
+        st.markdown(f"**Fortalezas:** {style_info['strengths']}")
+        st.markdown(f"**Desafíos:** {style_info['challenges']}")
+
+        # Get relative percentages
+        relative_percentages = get_relative_percentages(normalized_score)
         
         st.markdown("## Tu Desglose de Estilo DISC")
         st.write("Porcentajes Relativos")
@@ -663,7 +374,7 @@ if st.session_state.started:
                             normalized_score=normalized_score,
                             relative_percentages=relative_percentages,
                             fig=fig,
-                            style_description=style_description
+                            style_info=style_info
                         )
             get_pdf_download_button(pdf_buffer)
 
