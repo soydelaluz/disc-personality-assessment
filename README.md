@@ -1,54 +1,54 @@
-# DISC Personality Assessment App 👤
+# Aplicación de Evaluación de Personalidad DISC 👤
 
-**A modern DISC personality assessment app built with Streamlit and Python for generating personalized DISC profiles.**
+**Una aplicación moderna de evaluación de la personalidad DISC construida con Streamlit y Python para generar perfiles DISC personalizados.**
 
-## Features
+## Características
 
-- **Personalized DISC profiles**: Discover your unique personality style based on the DISC framework.
-- **Interactive UI**: Powered by Streamlit for easy navigation and a user-friendly experience.
-- **Style descriptions**: Provides detailed descriptions of single and combination styles.
-- **PDF and JSON Export**: Download your results as a PDF or JSON for future reference.
+- **Perfiles DISC personalizados**: Descubre tu estilo de personalidad único basado en el marco DISC.
+- **Interfaz de usuario interactiva**: Impulsada por Streamlit para una navegación fácil y una experiencia de usuario amigable.
+- **Descripciones de estilo**: Proporciona descripciones detalladas de estilos individuales y combinados.
+- **Exportación en PDF y JSON**: Descarga tus resultados en formato PDF o JSON para futuras consultas.
 
-## Getting Started
+## Primeros Pasos
 
-### Prerequisites
+### Requisitos Previos
 
 - **Python 3.10+**
-- **pip** for installing Python packages
+- **pip** para instalar paquetes de Python
 
-### Installation
+### Instalación
 
-1. Clone this repository:
+1. Clona este repositorio:
    ```bash
    git clone https://github.com/dzyla/disc-personality-assessment.git
    ```
-2. Navigate into the project directory:
+2. Navega al directorio del proyecto:
    ```bash
    cd disc-personality-assessment
    ```
-3. Install the required dependencies:
+3. Instala las dependencias requeridas:
    ```bash
    pip install -r requirements.txt
    ```
 
-### Running the App
+### Ejecución de la Aplicación
 
-To run the app locally, use Streamlit:
+Para ejecutar la aplicación localmente, utiliza Streamlit:
 
 ```bash
 streamlit run disc_style.py
 ```
 
-This will start the application and open it in your browser. Follow the prompts to complete the DISC assessment.
+Esto iniciará la aplicación y la abrirá en tu navegador. Sigue las instrucciones para completar la evaluación DISC.
 
-## Usage
+## Uso
 
-The app will guide users through a series of questions, after which it calculates the DISC profile based on their answers. Users can:
+La aplicación guiará a los usuarios a través de una serie de preguntas, tras lo cual calculará el perfil DISC basándose en sus respuestas. Los usuarios pueden:
 
-- View their DISC style profile in a visual format.
-- Read detailed descriptions of their primary and secondary styles.
-- Download their results as a PDF or JSON file.
+- Ver su perfil de estilo DISC en formato visual.
+- Leer descripciones detalladas de sus estilos primario y secundario.
+- Descargar sus resultados como un archivo PDF o JSON.
 
-## License
+## Licencia
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este proyecto está bajo la Licencia MIT; consulta el archivo [LICENSE](LICENSE) para más detalles.

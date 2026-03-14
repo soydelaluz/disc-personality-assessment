@@ -14,7 +14,7 @@ import math
 
 
 st.set_page_config(
-    page_title="DISC Personality Assessment :bust_in_silhouette:",
+    page_title="Evaluación de Personalidad DISC :bust_in_silhouette:",
     layout="wide",
     page_icon=":bust_in_silhouette:",
 )
@@ -42,11 +42,11 @@ st.markdown(
 
 # App Title with custom styling
 st.markdown(
-    "<h1 style='text-align: center; color: #184b6a;'>DISC Personality Assessment 👤</h1>",
+    "<h1 style='text-align: center; color: #184b6a;'>Evaluación de Personalidad DISC 👤</h1>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    "<p style='text-align: center; font-style: italic;'>Discover your DISC personality style by answering the questions below.</p>",
+    "<p style='text-align: center; font-style: italic;'>Descubre tu estilo de personalidad DISC respondiendo a las siguientes preguntas.</p>",
     unsafe_allow_html=True,
 )
 
@@ -73,18 +73,18 @@ if "score" not in st.session_state:
 if not st.session_state.started:
     st.markdown(
         """
-    ### Welcome to the DISC Personality Assessment
+    ### Bienvenido a la Evaluación de Personalidad DISC
 
-    The DISC assessment is a tool that helps you understand your personality traits across four major dimensions: Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C). By answering a series of questions, you'll discover your personality style and gain insights into how you interact with others.
+    La evaluación DISC es una herramienta que te ayuda a comprender tus rasgos de personalidad a través de cuatro dimensiones principales: Dominancia (D), Influencia (I), Estabilidad (S) y Cumplimiento (C). Al responder a una serie de preguntas, descubrirás tu estilo de personalidad y obtendrás información sobre cómo interactúas con los demás.
 
-    #### Instructions:
-    - You will be presented with a series of statements.
-    - For each statement, indicate how much you agree or disagree using the options provided.
-    - A value of **1** completely disagree, **2** somewhat disagree, **3** neutral, **4** somewhat agree, **5** completely agree
-    - Once you complete the assessment, you'll receive your DISC style profile and a detailed breakdown of your results.
-    - Carefully read the descriptions as some of them sound similar but have different meanings.
+    #### Instrucciones:
+    - Se te presentará una serie de afirmaciones.
+    - Para cada afirmación, indica cuánto estás de acuerdo o en desacuerdo utilizando las opciones proporcionadas.
+    - Un valor de **1** significa totalmente en desacuerdo, **2** algo en desacuerdo, **3** neutral, **4** algo de acuerdo, **5** totalmente de acuerdo.
+    - Una vez finalizada la evaluación, recibirás tu perfil de estilo DISC y un desglose detallado de tus resultados.
+    - Lee atentamente las descripciones, ya que algunas suenan parecidas pero tienen significados distintos.
 
-    Click "Let's Begin" to start the assessment!
+    Haz clic en "Empezar" para iniciar la evaluación.
     """
     )
 
@@ -92,16 +92,16 @@ if not st.session_state.started:
     c1, c2, c3 = st.columns([1, 2, 1])
 
     # Handle the "Let's Begin" button press
-    if c1.button("Let's Begin"):
+    if c1.button("Empezar"):
         st.session_state.started = True
         st.session_state.submitted = False
         st.rerun()  # Rerun the script to move to the next stage
 
     # File upload option, which is shown after clicking "Upload Previous Results"
-    if c3.checkbox("Upload Previous Results"):
+    if c3.checkbox("Cargar resultados anteriores"):
         # Display the file uploader when the button is clicked
         uploaded_file = st.file_uploader(
-            "Upload your previous JSON results", type=["json"]
+            "Carga tus resultados JSON anteriores", type=["json"]
         )
         if uploaded_file is not None:
             # Read the file as bytes
@@ -121,11 +121,11 @@ if not st.session_state.started:
                 st.session_state.started = True
                 st.session_state.show_results = True
                 st.session_state.submitted = True
-                st.write("File uploaded and processed successfully!")
+                st.write("¡Archivo cargado y procesado con éxito!")
                 st.rerun()  # Rerun to process the results
 
             except json.JSONDecodeError as e:
-                st.error(f"Error decoding JSON: {e}")
+                st.error(f"Error al decodificar JSON: {e}")
 
 
 # Updated plot function
@@ -146,7 +146,7 @@ def create_disc_plot(resultant_angle, resultant_magnitude):
         "o",
         markersize=24,
         color="#4CAF50",
-        label="Your DISC Style",
+        label="Tu Estilo DISC",
     )
 
     categories = ["D", "I", "S", "C"]
@@ -166,7 +166,7 @@ def create_disc_plot(resultant_angle, resultant_magnitude):
     ax.spines["polar"].set_visible(False)
     ax.set_facecolor("#f0f2f6")
 
-    plt.title("Your DISC Style Profile", fontsize=16, fontweight="bold", pad=20)
+    plt.title("Tu Perfil de Estilo DISC", fontsize=16, fontweight="bold", pad=20)
 
     return fig
 
@@ -175,7 +175,7 @@ def create_disc_plot(resultant_angle, resultant_magnitude):
 def get_json_download_link(normalized_score):
     json_str = json.dumps(normalized_score, indent=2)
     b64 = base64.b64encode(json_str.encode()).decode()
-    href = f'<a href="data:application/json;base64,{b64}" download="disc_results.json">Download JSON Results</a>'
+    href = f'<a href="data:application/json;base64,{b64}" download="disc_results.json">Descargar resultados JSON</a>'
     return href
 
 
@@ -185,7 +185,7 @@ def get_json_download_button(normalized_score):
 
     # Create a downloadable button using the JSON data
     st.download_button(
-        label="Download JSON Results",
+        label="Descargar resultados JSON",
         data=json_str,
         file_name="disc_results.json",
         mime="application/json",
@@ -196,7 +196,7 @@ def get_json_download_button(normalized_score):
 def get_pdf_download_link(pdf_buffer):
     # Encode the PDF buffer in base64 for downloading
     b64 = base64.b64encode(pdf_buffer.getvalue()).decode()
-    href = f'<a href="data:application/pdf;base64,{b64}" download="disc_report.pdf">Download PDF Report</a>'
+    href = f'<a href="data:application/pdf;base64,{b64}" download="disc_report.pdf">Descargar reporte PDF</a>'
     return href
 
 
@@ -206,7 +206,7 @@ def get_pdf_download_button(pdf_buffer):
 
     # Convert base64 PDF into a downloadable button
     st.download_button(
-        label="Download PDF Report",
+        label="Descargar reporte PDF",
         data=pdf_buffer.getvalue(),
         file_name="disc_report.pdf",
         mime="application/pdf",
@@ -255,11 +255,11 @@ def describe_style(normalized_score, resultant_angle):
 
     # Check if all normalized scores are equal (balanced style)
     if all(score == list(normalized_score.values())[0] for score in normalized_score.values()):
-        st.markdown("### Balanced Style")
+        st.markdown("### Estilo Equilibrado")
         st.markdown(
-            "Your responses indicate a balanced personality, where you do not show a clear preference for any specific DISC style."
+            "Tus respuestas indican una personalidad equilibrada, en la que no muestras una preferencia clara por ningún estilo DISC específico."
         )
-        return "Balanced Style"
+        return "Estilo Equilibrado"
 
     # Determine which range the resultant angle falls into
     for style, (start_angle, end_angle) in style_ranges.items():
@@ -269,16 +269,16 @@ def describe_style(normalized_score, resultant_angle):
             
             # Display the result
             st.markdown(f"{description['title']}\n\n{description['description']}")
-            st.markdown(f"**Strengths:** {description['strengths']}")
-            st.markdown(f"**Challenges:** {description['challenges']}")
-            return f"{description['title']}\n\n{description['description']}\n\nStrengths: {description['strengths']}\n\nChallenges: {description['challenges']}"
+            st.markdown(f"**Fortalezas:** {description['strengths']}")
+            st.markdown(f"**Desafíos:** {description['challenges']}")
+            return f"{description['title']}\n\n{description['description']}\n\nFortalezas: {description['strengths']}\n\nDesafíos: {description['challenges']}"
     
     # Default fallback if no match is found
-    st.markdown("### Balanced Style")
+    st.markdown("### Estilo Equilibrado")
     st.markdown(
-        "Your responses indicate a balanced personality without a clear preference for any specific DISC style."
+        "Tus respuestas indican una personalidad equilibrada sin una preferencia clara por ningún estilo DISC específico."
     )
-    return "Balanced Style"
+    return "Estilo Equilibrado"
 
 
 
@@ -330,21 +330,21 @@ def create_pdf_report(normalized_score, relative_percentages, fig, style_descrip
     story = []
 
     # Title
-    story.append(Paragraph("DISC Personality Assessment Report", styles["Title"]))
+    story.append(Paragraph("Reporte de Evaluación de Personalidad DISC", styles["Title"]))
     story.append(Spacer(1, 20))
 
     # Add Introduction
-    story.append(Paragraph("Thank you for completing the DISC Personality Assessment. This report provides insights into your personality style based on your responses.", styles['Justify']))
+    story.append(Paragraph("Gracias por completar la Evaluación de Personalidad DISC. Este reporte proporciona información sobre tu estilo de personalidad basada en tus respuestas.", styles['Justify']))
     story.append(Spacer(1, 20))
 
     # Add DISC Style Breakdown (Absolute Scores)
-    story.append(Paragraph("Your DISC Style Breakdown (Absolute Scores):", styles["Heading2"]))
+    story.append(Paragraph("Tu desglose de estilo DISC (Puntuaciones absolutas):", styles["Heading2"]))
     story.append(Spacer(1, 10))
-    story.append(Paragraph("The following scores represent your absolute level in each DISC style on a scale from 0% to 100%. A higher percentage indicates a stronger tendency towards that style.", styles['Justify']))
+    story.append(Paragraph("Las siguientes puntuaciones representan tu nivel absoluto en cada estilo DISC en una escala del 0% al 100%. Un porcentaje más alto indica una tendencia más fuerte hacia ese estilo.", styles['Justify']))
     story.append(Spacer(1, 10))
 
     # Create a table for absolute scores
-    data = [['Style', 'Score (0-100%)']]
+    data = [['Estilo', 'Puntuación (0-100%)']]
     for style, score in normalized_score.items():
         data.append([style, f"{score:.2f}%"])
 
@@ -359,13 +359,13 @@ def create_pdf_report(normalized_score, relative_percentages, fig, style_descrip
     story.append(Spacer(1, 20))
 
     # Add DISC Style Breakdown (Relative Percentages)
-    story.append(Paragraph("Your DISC Style Breakdown (Relative Percentages):", styles["Heading2"]))
+    story.append(Paragraph("Tu desglose de estilo DISC (Porcentajes relativos):", styles["Heading2"]))
     story.append(Spacer(1, 10))
-    story.append(Paragraph("These percentages represent the proportion of each DISC style relative to your overall personality profile. The total sums up to 100%.", styles['Justify']))
+    story.append(Paragraph("Estos porcentajes representan la proporción de cada estilo DISC en relación con tu perfil de personalidad general. El total suma el 100%.", styles['Justify']))
     story.append(Spacer(1, 10))
 
     # Create a table for relative percentages
-    data = [['Style', 'Relative Percentage']]
+    data = [['Estilo', 'Porcentaje relativo']]
     for style, score in relative_percentages.items():
         data.append([style, f"{score:.2f}%"])
 
@@ -380,11 +380,11 @@ def create_pdf_report(normalized_score, relative_percentages, fig, style_descrip
     story.append(Spacer(1, 20))
 
     # Explanation about the difference between Absolute Scores and Relative Percentages
-    story.append(Paragraph("Understanding Your Scores:", styles["Heading2"]))
+    story.append(Paragraph("Cómo entender tus puntuaciones:", styles["Heading2"]))
     story.append(Spacer(1, 10))
     story.append(Paragraph(
-        "The absolute scores indicate how strongly you exhibit each DISC style on its own, without comparison to other styles. A higher score means you tend to display more behaviors associated with that style.\n\n"
-        "The relative percentages show how each style contributes to your overall personality profile compared to the other styles. These percentages sum up to 100% and help you understand which styles are most dominant in your personality.",
+        "Las puntuaciones absolutas indican la fuerza con la que manifiestas cada estilo DISC por sí solo, sin compararlo con otros estilos. Una puntuación más alta significa que tiendes a mostrar más comportamientos asociados a ese estilo.\n\n"
+        "Los porcentajes relativos muestran cómo contribuye cada estilo a tu perfil de personalidad general en comparación con los demás estilos. Estos porcentajes suman el 100% y te ayudan a comprender qué estilos son más dominantes en tu personalidad.",
         styles['Justify']
     ))
     story.append(Spacer(1, 100))
@@ -399,20 +399,20 @@ def create_pdf_report(normalized_score, relative_percentages, fig, style_descrip
     story.append(Spacer(1, 20))
 
     # Add personalized style description
-    story.append(Paragraph("Your Personalized DISC Style Description:", styles["Heading2"]))
+    story.append(Paragraph("Tu descripción personalizada del estilo DISC:", styles["Heading2"]))
     story.append(Spacer(1, 10))
     story.append(Paragraph(style_description.replace("###", ""), styles['Justify']))
     story.append(Spacer(1, 50))
 
     story.append(PageBreak())
     # Add explanation about each DISC style
-    story.append(Paragraph("Understanding All DISC Styles:", styles["Heading2"]))
+    story.append(Paragraph("Cómo entender todos los estilos DISC:", styles["Heading2"]))
     story.append(Spacer(1, 10))
     styles_list = [
-        ('Dominance (D):', 'You tend to be direct, results-oriented, and assertive. You are motivated by challenges and achieving tangible results.'),
-        ('Influence (I):', 'You are typically outgoing, enthusiastic, and optimistic. You enjoy social interactions and persuading others.'),
-        ('Steadiness (S):', 'You are often patient, supportive, and team-oriented. You value cooperation and harmony in relationships.'),
-        ('Conscientiousness (C):', 'You tend to be analytical, precise, and detail-oriented. You focus on accuracy, quality, and expertise.')
+        ('Dominancia (D):', 'Tiendes a ser directo, orientado a los resultados y asertivo. Te motivan los retos y la consecución de resultados tangibles.'),
+        ('Influencia (I):', 'Sueles ser extrovertido, entusiasta y optimista. Disfrutas de las interacciones sociales y de persuadir a los demás.'),
+        ('Estabilidad (S):', 'Sueles ser paciente, solidario y estar orientado al equipo. Valoras la cooperación y la armonía en las relaciones.'),
+        ('Cumplimiento (C):', 'Tiendes a ser analítico, preciso y detallista. Te centras en la exactitud, la calidad y la experiencia.')
     ]
     for title, description in styles_list:
         story.append(Paragraph(f"<b>{title}</b> {description}", styles['Justify']))
@@ -422,15 +422,15 @@ def create_pdf_report(normalized_score, relative_percentages, fig, style_descrip
     # Add final remarks
     story.append(
         Paragraph(
-            "Remember, everyone has aspects of all four styles, but most people tend to gravitate towards one or two primary styles. "
-            "Your unique combination of styles influences how you communicate, make decisions, and interact with others.",
+            "Recuerda que todo el mundo tiene aspectos de los cuatro estilos, pero la mayoría de la gente tiende a gravitar hacia uno o dos estilos principales. "
+            "Tu combinación única de estilos influye en tu forma de comunicarte, tomar decisiones e interactuar con los demás.",
             styles['Justify']
         )
     )
     story.append(Spacer(1, 10))
     story.append(
         Paragraph(
-            "Use this insight to enhance your personal and professional relationships by recognizing and appreciating different styles in yourself and others.",
+            "Utiliza esta información para mejorar tus relaciones personales y profesionales reconociendo y apreciando los diferentes estilos en ti mismo y en los demás.",
             styles['Justify']
         )
     )
@@ -493,38 +493,38 @@ if st.session_state.started:
                 n = i + 1
                 st.markdown(f"#### {n}) {q['question']}")
                 options = [
-                    "Select an option",
-                    "1 - Completely Disagree",
-                    "2 - somewhat Disagree",
+                    "Selecciona una opción",
+                    "1 - Totalmente en desacuerdo",
+                    "2 - Algo en desacuerdo",
                     "3 - Neutral",
-                    "4 - somewhat Agree",
-                    "5 - Completely Agree",
+                    "4 - Algo de acuerdo",
+                    "5 - Totalmente de acuerdo",
                 ]
                 selected_option = st.radio(
-                    "Choose your response",
+                    "Elige tu respuesta",
                     options=options,
                     index=0,
                     key=f"radio_{i}",
                     horizontal=True,
                 )
                 if st.session_state.page_number < total_pages - 1:
-                    submit_button = st.form_submit_button("Next")
+                    submit_button = st.form_submit_button("Siguiente")
                 else:
-                    submit_button = st.form_submit_button("**Show My DISC Style**")
+                    submit_button = st.form_submit_button("**Mostrar mi estilo DISC**")
             else:
-                submit_button = st.form_submit_button("**Show My DISC Style**")
+                submit_button = st.form_submit_button("**Mostrar mi estilo DISC**")
 
         if submit_button:
-            if selected_option == "Select an option":
-                st.warning("Please select a response to proceed.")
+            if selected_option == "Selecciona una opción":
+                st.warning("Por favor, selecciona una respuesta para continuar.")
             else:
                 # Map the selected option to a score
                 score_mapping = {
-                    "1 - Completely Disagree": 1,
-                    "2 - somewhat Disagree": 2,
+                    "1 - Totalmente en desacuerdo": 1,
+                    "2 - Algo en desacuerdo": 2,
                     "3 - Neutral": 3,
-                    "4 - somewhat Agree": 4,
-                    "5 - Completely Agree": 5,
+                    "4 - Algo de acuerdo": 4,
+                    "5 - Totalmente de acuerdo": 5,
                 }
                 st.session_state.answers[i] = score_mapping[selected_option]
                 if st.session_state.page_number < total_pages - 1:
@@ -613,7 +613,7 @@ if st.session_state.started:
             st.pyplot(fig)
 
         # Personalized Style Descriptions
-        st.markdown("## Your Personalized DISC Style")
+        st.markdown("## Tu Estilo DISC Personalizado")
         style_description = describe_style(normalized_score, resultant_angle)
 
         # Display normalized scores with progress bars
@@ -640,8 +640,8 @@ if st.session_state.started:
             else:
                 relative_percentages[style] = (score / total_normalized) * 100
         
-        st.markdown("## Your DISC Style Breakdown")
-        st.write("Relative Percentages")
+        st.markdown("## Tu Desglose de Estilo DISC")
+        st.write("Porcentajes Relativos")
         cols = st.columns(4)
         for idx, (style, score_value) in enumerate(relative_percentages.items()):
             with cols[idx]:
@@ -654,7 +654,7 @@ if st.session_state.started:
                 st.text(f"{score_value:.2f}%")
         
         # Download options
-        st.markdown("## Download Your Results")
+        st.markdown("## Descarga tus Resultados")
         col1, col2 = st.columns(2)
         with col1:
             get_json_download_button(normalized_score)
@@ -671,19 +671,19 @@ if st.session_state.started:
         st.markdown("""---""")
         st.markdown(
             """
-        ### Understanding All DISC Styles
+        ### Cómo entender todos los estilos DISC
 
-        - **Dominance (D)**: You tend to be direct, results-oriented, and assertive.
-        - **Influence (I)**: You are typically outgoing, enthusiastic, and optimistic.
-        - **Steadiness (S)**: You are often patient, supportive, and team-oriented.
-        - **Conscientiousness (C)**: You tend to be analytical, precise, and detail-oriented.
+        - **Dominancia (D)**: Tiendes a ser directo, orientado a los resultados y asertivo.
+        - **Influencia (I)**: Sueles ser extrovertido, entusiasta y optimista.
+        - **Estabilidad (S)**: Sueles ser paciente, solidario y estar orientado al equipo.
+        - **Cumplimiento (C)**: Tiendes a ser analítico, preciso y detallista.
 
-        Remember, everyone has aspects of all four styles, but most people tend to gravitate towards one or two primary styles. 
-        Your unique combination of styles influences how you communicate, make decisions, and interact with others.
+        Recuerda que todo el mundo tiene aspectos de los cuatro estilos, pero la mayoría de la gente tiende a gravitar hacia uno o dos estilos principales.
+        Tu combinación única de estilos influye en tu forma de comunicarte, tomar decisiones e interactuar con los demás.
         """
         )
 
-        if st.button("Restart"):
+        if st.button("Reiniciar"):
             st.session_state.pop("page_number")
             st.session_state.pop("score")
             st.session_state.pop("answers")
@@ -696,7 +696,7 @@ st.markdown(
     """
     ---
     <div style="text-align: center;">
-        <strong><a href="https://github.com/dzyla/disc-personality-assessment">Source code</a></strong> | Developed by <a href="https://dzyla.com">Dawid Zyla</a>
+        <strong><a href="https://github.com/dzyla/disc-personality-assessment">Código fuente</a></strong> | Desarrollado por <a href="https://dzyla.com">Dawid Zyla</a>
     </div>
     """,
     unsafe_allow_html=True,
