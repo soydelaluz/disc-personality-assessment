@@ -19,10 +19,14 @@ st.set_page_config(
     page_icon=":bust_in_silhouette:",
 )
 
-# Custom CSS to improve app appearance
+# Custom CSS to improve app appearance and hide Streamlit branding
 st.markdown(
     """
 <style>
+    [data-testid="stHeader"] {display: none !important;}
+    #MainMenu {visibility: hidden !important;}
+    footer {visibility: hidden !important;}
+    .stAppDeployButton {display: none !important;}
     .stApp {
         max-width: 1200px;
         margin: 0 auto;
@@ -692,12 +696,3 @@ if st.session_state.started:
             st.rerun()
 
 
-st.markdown(
-    """
-    ---
-    <div style="text-align: center;">
-        <strong><a href="https://github.com/dzyla/disc-personality-assessment">Código fuente</a></strong> | Desarrollado por <a href="https://dzyla.com">Dawid Zyla</a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
